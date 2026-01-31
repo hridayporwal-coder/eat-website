@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - EAT</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <span class="logo-icon">🍽️</span>
+                EAT
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="order.html">Order</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+            <button class="btn" onclick="window.location.href='order.html'">Shop Now</button>
+        </div>
+    </header>
+
+    <section class="page-hero">
+        <h1>Contact Us</h1>
+        <p>We'd love to hear from you</p>
+    </section>
+
+    <section class="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2>Get In Touch</h2>
+                    <div class="contact-item">
+                        <h3>Email</h3>
+                        <p>eat.eatandthrow@gmail.com</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>Phone</h3>
+                        <p>9136039641</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>Founder</h3>
+                        <p>Hriday Porwal</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>Location</h3>
+                        <p>Yashwant CHS, Gharkul Society, Bharat Nagar, 4 bungalows, Andheri West, Mumbai, Maharashtra 400053</p>
+                    </div>
+                    
+                    <div class="order-instructions">
+                        <h3>How to Order</h3>
+                        <ol>
+                            <li>Add products to cart on our Order page</li>
+                            <li>Fill in your contact information</li>
+                            <li>Place your order online</li>
+                            <li>Call us at <strong>9136039641</strong> to complete payment</li>
+                            <li>We'll arrange delivery</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h2>Send Us a Message</h2>
+                    <form id="contact-form" action="https://formspree.io/f/mnjjbvrl" method="POST">
+                        <input type="hidden" name="_subject" value="New Message from EAT Website">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="map">
+        <div class="container">
+            <h2 class="section-title">Find Us</h2>
+            <div class="map-placeholder">
+                <p>📍 Yashwant CHS, Gharkul Society</p>
+                <p>Bharat Nagar, 4 bungalows</p>
+                <p>Andheri West, Mumbai, Maharashtra 400053</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="order.html">Order</a>
+                <a href="contact.html">Contact</a>
+                <a href="login.html">Login</a>
+            </div>
+            <div class="contact-info-box">
+                <p><strong>Contact us to complete your order:</strong></p>
+                <p>Email: eat.eatandthrow@gmail.com | Phone: 9136039641</p>
+                <p>Founder: Hriday Porwal</p>
+            </div>
+            <p>&copy; 2023 EAT (Eat And Through). All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

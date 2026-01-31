@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order - EAT</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <span class="logo-icon">🍽️</span>
+                EAT
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="order.html">Order</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+            <button class="btn" onclick="window.location.href='order.html'">Shop Now</button>
+        </div>
+    </header>
+
+    <section class="page-hero">
+        <h1>Order Sustainable Tableware & Salads</h1>
+        <p>Choose from our eco-friendly products and healthy salads</p>
+    </section>
+
+    <div class="cart-container">
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+            <div class="cart-header-right">
+                <span id="cart-count">0 items</span>
+                <button class="btn clear-cart-btn" id="clear-cart-btn">Clear Cart</button>
+            </div>
+        </div>
+        <div id="cart-items" class="cart-items">
+            <p class="empty-cart">Your cart is empty</p>
+        </div>
+        
+        <div id="customer-info-form" class="customer-form">
+            <h3>Customer Information</h3>
+            <form id="order-form" action="https://formspree.io/f/mnjjbvrl" method="POST">
+                <div class="form-group">
+                    <label for="customer-name">Full Name *</label>
+                    <input type="text" id="customer-name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="customer-phone">Phone Number *</label>
+                    <input type="tel" id="customer-phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="customer-email">Email Address</label>
+                    <input type="email" id="customer-email" name="email">
+                </div>
+                <div class="form-group">
+                    <label for="customer-address">Delivery Address</label>
+                    <textarea id="customer-address" name="address" rows="3"></textarea>
+                </div>
+                <input type="hidden" id="order-details" name="order_details">
+                <input type="hidden" id="order-total" name="order_total">
+                <input type="hidden" name="_subject" value="NEW ORDER - EAT Website">
+                
+                <button type="submit" class="btn" id="checkout-btn">Place Order</button>
+            </form>
+        </div>
+        
+        <div class="cart-total">
+            <p>Total: ₹<span id="cart-total">0.00</span></p>
+        </div>
+    </div>
+
+    <section class="order-products">
+        <div class="container">
+            <h2 class="section-title">Our Sustainable Tableware</h2>
+            <div class="order-grid">
+                <div class="order-card">
+                    <div class="product-image">
+                        <div class="product-icon">🍽️</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Eco-Friendly Plates</h3>
+                        <p class="price">₹19 per plate</p>
+                        <div class="quantity-controls">
+                            <button class="qty-btn minus" data-product="plate">-</button>
+                            <span class="quantity" data-product="plate">0</span>
+                            <button class="qty-btn plus" data-product="plate">+</button>
+                        </div>
+                        <button class="btn add-to-cart" data-product="plate">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <div class="order-card">
+                    <div class="product-image">
+                        <div class="product-icon">🍴</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Biodegradable Forks</h3>
+                        <p class="price">₹6 per fork</p>
+                        <div class="quantity-controls">
+                            <button class="qty-btn minus" data-product="fork">-</button>
+                            <span class="quantity" data-product="fork">0</span>
+                            <button class="qty-btn plus" data-product="fork">+</button>
+                        </div>
+                        <button class="btn add-to-cart" data-product="fork">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <div class="order-card">
+                    <div class="product-image">
+                        <div class="product-icon">🥄</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Compostable Spoons</h3>
+                        <p class="price">₹6 per spoon</p>
+                        <div class="quantity-controls">
+                            <button class="qty-btn minus" data-product="spoon">-</button>
+                            <span class="quantity" data-product="spoon">0</span>
+                            <button class="qty-btn plus" data-product="spoon">+</button>
+                        </div>
+                        <button class="btn add-to-cart" data-product="spoon">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="order-products" style="background-color: #f5f5f5;">
+        <div class="container">
+            <h2 class="section-title">Our Healthy Salads (250g each)</h2>
+            <div class="order-grid">
+                <div class="order-card">
+                    <div class="product-image">
+                        <div class="product-icon">🥗</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Green Salad</h3>
+                        <p class="price">₹350 per pack</p>
+                        <p>Fresh mix of lettuce, spinach, cucumber, and tomatoes</p>
+                        <div class="quantity-controls">
+                            <button class="qty-btn minus" data-product="green-salad">-</button>
+                            <span class="quantity" data-product="green-salad">0</span>
+                            <button class="qty-btn plus" data-product="green-salad">+</button>
+                        </div>
+                        <button class="btn add-to-cart" data-product="green-salad">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <div class="order-card">
+                    <div class="product-image">
+                        <div class="product-icon">🥙</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Happy Salad</h3>
+                        <p class="price">₹350 per pack</p>
+                        <p>Colorful mix with bell peppers, corn, olives, and feta cheese</p>
+                        <div class="quantity-controls">
+                            <button class="qty-btn minus" data-product="happy-salad">-</button>
+                            <span class="quantity" data-product="happy-salad">0</span>
+                            <button class="qty-btn plus" data-product="happy-salad">+</button>
+                        </div>
+                        <button class="btn add-to-cart" data-product="happy-salad">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <div class="order-card">
+                    <div class="product-image">
+                        <div class="product-icon">🍗</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Protein Pro Salad</h3>
+                        <p class="price">₹550 per pack</p>
+                        <p>Protein-packed with grilled chicken, eggs, chickpeas, and avocado</p>
+                        <div class="quantity-controls">
+                            <button class="qty-btn minus" data-product="protein-salad">-</button>
+                            <span class="quantity" data-product="protein-salad">0</span>
+                            <button class="qty-btn plus" data-product="protein-salad">+</button>
+                        </div>
+                        <button class="btn add-to-cart" data-product="protein-salad">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="order-confirmation" class="order-confirmation hidden">
+        <div class="confirmation-icon">✅</div>
+        <h2>Order Received Successfully!</h2>
+        <p>Thank you for your order! We have sent the details to <strong>eat.eatandthrow@gmail.com</strong>.</p>
+        
+        <div class="important-notice">
+            <h3>📞 Next Steps:</h3>
+            <p>Please call us at <strong class="phone-number">9136039641</strong> to:</p>
+            <ul>
+                <li>Confirm your order details</li>
+                <li>Complete payment</li>
+                <li>Arrange delivery</li>
+            </ul>
+        </div>
+        
+        <div class="contact-details">
+            <p><strong>Our Location:</strong><br>
+            Yashwant CHS, Gharkul Society, Bharat Nagar,<br>
+            4 bungalows, Andheri West, Mumbai, Maharashtra 400053</p>
+            
+            <p><strong>Founder:</strong> Hriday Porwal</p>
+        </div>
+        
+        <button class="btn" onclick="closeOrderConfirmation()">Continue Shopping</button>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="order.html">Order</a>
+                <a href="contact.html">Contact</a>
+                <a href="login.html">Login</a>
+            </div>
+            <div class="contact-info-box">
+                <p><strong>Contact us to complete your order:</strong></p>
+                <p>Email: eat.eatandthrow@gmail.com | Phone: 9136039641</p>
+                <p>Founder: Hriday Porwal</p>
+            </div>
+            <p>&copy; 2023 EAT (Eat And Through). All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Order page loaded');
+            
+            let cart = JSON.parse(localStorage.getItem('eat-cart')) || [];
+            let quantities = JSON.parse(localStorage.getItem('eat-quantities')) || {
+                plate: 0, fork: 0, spoon: 0,
+                'green-salad': 0, 'happy-salad': 0, 'protein-salad': 0
+            };
+            
+            const products = {
+                plate: { name: "Eco-Friendly Plates", price: 19 },
+                fork: { name: "Biodegradable Forks", price: 6 },
+                spoon: { name: "Compostable Spoons", price: 6 },
+                'green-salad': { name: "Green Salad (250g)", price: 350 },
+                'happy-salad': { name: "Happy Salad (250g)", price: 350 },
+                'protein-salad': { name: "Protein Pro Salad (250g)", price: 550 }
+            };
+            
+            restoreQuantities();
+            updateCartDisplay();
+            setupEventListeners();
+            
+            function restoreQuantities() {
+                Object.keys(quantities).forEach(product => {
+                    const qtyElement = document.querySelector(`.quantity[data-product="${product}"]`);
+                    if (qtyElement) {
+                        qtyElement.textContent = quantities[product];
+                    }
+                });
+            }
+            
+            function updateCartDisplay() {
+                const cartItems = document.getElementById('cart-items');
+                const cartCount = document.getElementById('cart-count');
+                const cartTotal = document.getElementById('cart-total');
+                const clearCartBtn = document.getElementById('clear-cart-btn');
+                
+                if (!cartItems) return;
+                
+                cartItems.innerHTML = '';
+                
+                let total = 0;
+                let itemCount = 0;
+                
+                if (cart.length === 0) {
+                    cartItems.innerHTML = '<p class="empty-cart">Your cart is empty</p>';
+                    if (clearCartBtn) {
+                        clearCartBtn.disabled = true;
+                        clearCartBtn.style.opacity = '0.5';
+                        clearCartBtn.style.cursor = 'not-allowed';
+                    }
+                } else {
+                    cart.forEach(item => {
+                        const itemTotal = item.price * item.quantity;
+                        total += itemTotal;
+                        itemCount += item.quantity;
+                        
+                        const cartItem = document.createElement('div');
+                        cartItem.className = 'cart-item';
+                        cartItem.innerHTML = `
+                            <div class="item-info">
+                                <h4>${item.name}</h4>
+                                <p>₹${item.price} × ${item.quantity}</p>
+                            </div>
+                            <div class="item-total">
+                                ₹${itemTotal.toFixed(2)}
+                            </div>
+                        `;
+                        cartItems.appendChild(cartItem);
+                    });
+                    
+                    if (clearCartBtn) {
+                        clearCartBtn.disabled = false;
+                        clearCartBtn.style.opacity = '1';
+                        clearCartBtn.style.cursor = 'pointer';
+                    }
+                }
+                
+                if (cartCount) cartCount.textContent = `${itemCount} ${itemCount === 1 ? 'item' : 'items'}`;
+                if (cartTotal) cartTotal.textContent = total.toFixed(2);
+                
+                localStorage.setItem('eat-cart', JSON.stringify(cart));
+                localStorage.setItem('eat-quantities', JSON.stringify(quantities));
+            }
+            
+            function setupEventListeners() {
+                // Quantity buttons
+                document.querySelectorAll('.qty-btn.plus').forEach(button => {
+                    button.addEventListener('click', function() {
+                        const product = this.dataset.product;
+                        quantities[product]++;
+                        updateQuantityDisplay(product);
+                    });
+                });
+                
+                document.querySelectorAll('.qty-btn.minus').forEach(button => {
+                    button.addEventListener('click', function() {
+                        const product = this.dataset.product;
+                        if (quantities[product] > 0) {
+                            quantities[product]--;
+                            updateQuantityDisplay(product);
+                        }
+                    });
+                });
+                
+                // Add to Cart buttons
+                document.querySelectorAll('.add-to-cart').forEach(button => {
+                    button.addEventListener('click', function() {
+                        const product = this.dataset.product;
+                        const quantity = quantities[product];
+                        
+                        if (quantity > 0) {
+                            addToCart(product, quantity);
+                            quantities[product] = 0;
+                            updateQuantityDisplay(product);
+                            showNotification(`${quantity} ${products[product].name} added to cart!`, 'success');
+                        } else {
+                            showNotification('Please select at least 1 item', 'warning');
+                        }
+                    });
+                });
+                
+                // Clear Cart button
+                const clearCartBtn = document.getElementById('clear-cart-btn');
+                if (clearCartBtn) {
+                    clearCartBtn.addEventListener('click', function() {
+                        if (cart.length > 0) {
+                            if (confirm('Are you sure you want to clear your cart?')) {
+                                clearCart();
+                                showNotification('Cart cleared successfully!', 'success');
+                            }
+                        } else {
+                            showNotification('Your cart is already empty!', 'warning');
+                        }
+                    });
+                }
+                
+                // Order form
+                const orderForm = document.getElementById('order-form');
+                if (orderForm) {
+                    orderForm.addEventListener('submit', function(e) {
+                        e.preventDefault();
+                        
+                        if (cart.length === 0) {
+                            showNotification('Your cart is empty!', 'warning');
+                            return false;
+                        }
+                        
+                        let orderDetails = "ORDER DETAILS:\n\n";
+                        let total = 0;
+                        
+                        cart.forEach(item => {
+                            const itemTotal = item.price * item.quantity;
+                            total += itemTotal;
+                            orderDetails += `${item.quantity} × ${item.name} - ₹${itemTotal}\n`;
+                        });
+                        
+                        orderDetails += `\nTOTAL: ₹${total}`;
+                        
+                        document.getElementById('order-details').value = orderDetails;
+                        document.getElementById('order-total').value = total.toFixed(2);
+                        
+                        document.getElementById('order-confirmation').classList.remove('hidden');
+                        
+                        clearCart();
+                        
+                        setTimeout(() => {
+                            orderForm.submit();
+                        }, 1000);
+                        
+                        return true;
+                    });
+                }
+            }
+            
+            function updateQuantityDisplay(product) {
+                const qtyElement = document.querySelector(`.quantity[data-product="${product}"]`);
+                if (qtyElement) {
+                    qtyElement.textContent = quantities[product];
+                }
+                localStorage.setItem('eat-quantities', JSON.stringify(quantities));
+            }
+            
+            function addToCart(product, quantity) {
+                const existingItem = cart.find(item => item.product === product);
+                
+                if (existingItem) {
+                    existingItem.quantity += quantity;
+                } else {
+                    cart.push({
+                        product: product,
+                        name: products[product].name,
+                        price: products[product].price,
+                        quantity: quantity
+                    });
+                }
+                
+                updateCartDisplay();
+            }
+            
+            function clearCart() {
+                cart = [];
+                quantities = {
+                    plate: 0, fork: 0, spoon: 0,
+                    'green-salad': 0, 'happy-salad': 0, 'protein-salad': 0
+                };
+                updateCartDisplay();
+                restoreQuantities();
+                localStorage.setItem('eat-cart', JSON.stringify(cart));
+                localStorage.setItem('eat-quantities', JSON.stringify(quantities));
+            }
+            
+            function showNotification(message, type = 'success') {
+                const existing = document.querySelector('.notification');
+                if (existing) existing.remove();
+                
+                const notification = document.createElement('div');
+                notification.className = `notification ${type}`;
+                notification.textContent = message;
+                notification.style.cssText = `
+                    position: fixed;
+                    top: 20px;
+                    right: 20px;
+                    padding: 15px 20px;
+                    border-radius: 5px;
+                    color: white;
+                    font-weight: bold;
+                    z-index: 10000;
+                    background-color: ${type === 'success' ? '#4CAF50' : type === 'warning' ? '#ff9800' : '#f44336'};
+                `;
+                
+                document.body.appendChild(notification);
+                
+                setTimeout(() => notification.remove(), 3000);
+            }
+            
+            window.closeOrderConfirmation = function() {
+                const confirmation = document.getElementById('order-confirmation');
+                if (confirmation) {
+                    confirmation.classList.add('hidden');
+                }
+            };
+        });
+    </script>
+</body>
+</html>

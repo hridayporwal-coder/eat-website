@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - EAT</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <span class="logo-icon">🍽️</span>
+                EAT
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="order.html">Order</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+            <button class="btn" onclick="window.location.href='order.html'">Shop Now</button>
+        </div>
+    </header>
+
+    <section class="page-hero">
+        <h1>Login & Registration</h1>
+        <p>Access your account or create a new one</p>
+    </section>
+
+    <section class="login">
+        <div class="container">
+            <div class="login-container">
+                <div class="login-form" id="login-form">
+                    <h2>Login to Your Account</h2>
+                    <form id="loginForm">
+                        <div class="form-group">
+                            <label for="login-email">Email Address</label>
+                            <input type="email" id="login-email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="login-password">Password</label>
+                            <input type="password" id="login-password" required>
+                        </div>
+                        <button type="submit" class="btn">Login</button>
+                    </form>
+                    <div class="login-link">
+                        <p>Don't have an account? <a href="#" id="show-register">Register here</a></p>
+                    </div>
+                </div>
+
+                <div class="register-form hidden" id="register-form">
+                    <h2>Create New Account</h2>
+                    <form id="registerForm">
+                        <div class="form-group">
+                            <label for="register-name">Full Name</label>
+                            <input type="text" id="register-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="register-email">Email Address</label>
+                            <input type="email" id="register-email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="register-phone">Phone Number</label>
+                            <input type="tel" id="register-phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="register-password">Password</label>
+                            <input type="password" id="register-password" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirm-password">Confirm Password</label>
+                            <input type="password" id="confirm-password" required>
+                        </div>
+                        <button type="submit" class="btn">Create Account</button>
+                    </form>
+                    <div class="login-link">
+                        <p>Already have an account? <a href="#" id="show-login">Login here</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="order.html">Order</a>
+                <a href="contact.html">Contact</a>
+                <a href="login.html">Login</a>
+            </div>
+            <div class="contact-info-box">
+                <p><strong>Contact us to complete your order:</strong></p>
+                <p>Email: eat.eatandthrow@gmail.com | Phone: 9136039641</p>
+                <p>Founder: Hriday Porwal</p>
+            </div>
+            <p>&copy; 2023 EAT (Eat And Through). All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const showRegister = document.getElementById('show-register');
+            const showLogin = document.getElementById('show-login');
+            const loginForm = document.getElementById('login-form');
+            const registerForm = document.getElementById('register-form');
+            
+            if (showRegister) {
+                showRegister.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    loginForm.classList.add('hidden');
+                    registerForm.classList.remove('hidden');
+                });
+            }
+            
+            if (showLogin) {
+                showLogin.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    registerForm.classList.add('hidden');
+                    loginForm.classList.remove('hidden');
+                });
+            }
+            
+            const loginFormElement = document.getElementById('loginForm');
+            if (loginFormElement) {
+                loginFormElement.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    alert('Login successful! (Demo only)');
+                    this.reset();
+                });
+            }
+            
+            const registerFormElement = document.getElementById('registerForm');
+            if (registerFormElement) {
+                registerFormElement.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const password = document.getElementById('register-password').value;
+                    const confirmPassword = document.getElementById('confirm-password').value;
+                    
+                    if (password !== confirmPassword) {
+                        alert('Passwords do not match!');
+                        return;
+                    }
+                    
+                    alert('Account created successfully! (Demo only)');
+                    registerFormElement.reset();
+                    registerForm.classList.add('hidden');
+                    loginForm.classList.remove('hidden');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
