@@ -85,7 +85,7 @@
                     </div>
                     <div class="product-info">
                         <h3>Eco-Friendly Plates</h3>
-                        <p class="price">₹19 per plate</p>
+                        <p class="price">₹5 per plate</p>
                         <div class="quantity-controls">
                             <button class="qty-btn minus" data-product="plate">-</button>
                             <span class="quantity" data-product="plate">0</span>
@@ -101,7 +101,7 @@
                     </div>
                     <div class="product-info">
                         <h3>Biodegradable Forks</h3>
-                        <p class="price">₹6 per fork</p>
+                        <p class="price">₹3 per fork</p>
                         <div class="quantity-controls">
                             <button class="qty-btn minus" data-product="fork">-</button>
                             <span class="quantity" data-product="fork">0</span>
@@ -117,7 +117,7 @@
                     </div>
                     <div class="product-info">
                         <h3>Compostable Spoons</h3>
-                        <p class="price">₹6 per spoon</p>
+                        <p class="price">₹3 per spoon</p>
                         <div class="quantity-controls">
                             <button class="qty-btn minus" data-product="spoon">-</button>
                             <span class="quantity" data-product="spoon">0</span>
@@ -242,10 +242,11 @@
                 'green-salad': 0, 'happy-salad': 0, 'protein-salad': 0
             };
             
+            // Updated product prices: plate=5, fork=3, spoon=3, salads unchanged
             const products = {
-                plate: { name: "Eco-Friendly Plates", price: 19 },
-                fork: { name: "Biodegradable Forks", price: 6 },
-                spoon: { name: "Compostable Spoons", price: 6 },
+                plate: { name: "Eco-Friendly Plates", price: 5 },
+                fork: { name: "Biodegradable Forks", price: 3 },
+                spoon: { name: "Compostable Spoons", price: 3 },
                 'green-salad': { name: "Green Salad (250g)", price: 350 },
                 'happy-salad': { name: "Happy Salad (250g)", price: 350 },
                 'protein-salad': { name: "Protein Pro Salad (250g)", price: 550 }
@@ -478,5 +479,4 @@
         });
     </script>
 </body>
-
 </html>
